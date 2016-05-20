@@ -1,0 +1,11 @@
+registry:
+    build: ./registry
+    ports:
+        - "5000:5000"
+    net: host
+auth_server:
+    build: ./auth_server
+    ports:
+        - "80:80"
+        - "443:443"
+    net: host

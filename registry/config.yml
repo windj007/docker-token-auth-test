@@ -1,0 +1,25 @@
+version: 0.1
+log:
+  level: debug
+  fields:
+    service: registry
+storage:
+    cache:
+        blobdescriptor: inmemory
+    filesystem:
+        rootdirectory: /var/lib/registry
+http:
+    addr: :5000
+    headers:
+        X-Content-Type-Options: [nosniff]
+    tls:
+        certificate: /etc/docker/certs/cert.pem
+        key: /etc/docker/certs/key.pem
+    clientcas:
+        - /etc/docker/certs/ca.pem
+auth:
+  token:
+    realm: https://localhost/token/
+    service: test-registry
+    issuer: auth_server
+    rootcertbundle: /etc/docker/certs/ca.pem
