@@ -32,3 +32,6 @@ A minimal setup needed to test Docker Registry authentication via JWT (Bearer) t
 
     # Check Docker daemon logs (client-side)
     tail -100 /var/log/daemon.log # should contain something like level=error msg="Upload failed, retrying: unable to decode token response: json: cannot unmarshal string into Go value of type int"
+    
+    # To get auth_server logs and the generated token, please run
+    tail docker-1.7.1.log
