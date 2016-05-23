@@ -14,20 +14,15 @@ A minimal setup needed to test Docker Registry authentication via JWT (Bearer) t
 
 ## How to reproduce bug with token unmarshalling
 
-1. First, install old docker 1.9.0 and run test
-
-
+    # First, install old docker 1.9.0 and run test
     sudo aptitude purge docker-engine
     sudo aptitude install docker-engine=1.9.0-0~jessie # or another variant for 1.9.0
     ./docker-compose-1.5.2 up &> docker-1.5.2.log &
     ./run_test.sh # must succeed
     ./docker-compose-1.5.2 down
     docker images -aq | xargs docker rmi -f
-    
 
-2. Second, install new docker and run test again
-
-
+    # Second, install new docker and run test again
     sudo aptitude purge docker-engine
     sudo aptitude install docker-engine=1.11.1-0~jessie # or another variant for 1.11.1
     ./docker-compose-1.7.1 up &> docker-1.7.1.log &
