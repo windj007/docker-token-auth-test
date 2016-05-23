@@ -16,6 +16,7 @@ A minimal setup needed to test Docker Registry authentication via JWT (Bearer) t
 
 1. First, install old docker 1.9.0 and run test
 
+    sudo aptitude purge docker-engine
     sudo aptitude install docker-engine=1.9.0-0~jessie # or another variant for 1.9.0
     ./docker-compose-1.5.2 up &> docker-1.5.2.log &
     ./run_test.sh # must succeed
@@ -25,6 +26,7 @@ A minimal setup needed to test Docker Registry authentication via JWT (Bearer) t
 
 2. Second, install new docker and run test again
 
+    sudo aptitude purge docker-engine
     sudo aptitude install docker-engine=1.11.1-0~jessie # or another variant for 1.11.1
     ./docker-compose-1.7.1 up &> docker-1.7.1.log &
     ./run_test.sh # must fail with cannot unmarshal string to Go type int
