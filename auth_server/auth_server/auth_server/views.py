@@ -61,7 +61,7 @@ def get_token(request):
                                                         'x5c' : [ get_certificate() ]
                                                         },
                                              algorithm = settings.JWT_SIGNATURE_ALGO),
-                        'expires_in' : '3600',
+                        'expires_in' : 3600,
                         'issued_at' : datetime.datetime.utcnow().isoformat() + 'Z'
                         }
     logger.debug(('response', json.dumps(response_payload)))
