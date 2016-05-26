@@ -14,6 +14,8 @@ ADD ssl.conf /etc/apache2/conf-enabled/ssl.conf
 ADD ports.conf /etc/apache2/ports.conf
 RUN mkdir -p /var/cache/httpd/mod_ssl/ssl_scache
 RUN a2enmod ssl rewrite
+RUN ln -sf /dev/stderr /var/log/apache2/error.log
+
 
 ADD auth_server/ /srv/auth_server/
 
